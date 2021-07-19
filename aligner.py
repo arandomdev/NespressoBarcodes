@@ -3,7 +3,7 @@ Start code has this format
 01 ---- 10 ---- 10 ---- 10 ------ 01
 """
 
-TEST_CODE = "01011001011100010001010010010101100101110001000101001010010110100111001000011000101001011001011100100001010010010101101001110001000110001001"  # noqa
+TEST_CODE = "10101101000101001110100111000110111000010100111001011100011011010001010011100101110001101101000110001110100111001010111000011000111001011100"  # noqa
 
 
 def shift(number: str) -> str:
@@ -21,7 +21,8 @@ def main():
 			and currentCode[18:20] == "10"
 			and currentCode[26:28] == "01"
 		):
-			print(currentCode)
+			print(f"Aligned: {currentCode}")
+			print(f"Inverted: {''.join(['1' if x == '0' else '0' for x in currentCode])}")  # noqa
 			break
 
 		currentCode = shift(currentCode)
