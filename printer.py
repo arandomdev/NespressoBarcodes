@@ -1,4 +1,8 @@
+import argparse
+import os
+import pathlib
 from dataclasses import dataclass
+
 from PIL import Image, ImageDraw
 
 TEST_CODE = "01110010110110010010001101010111001011010101000100110110011100011101100100010011010101110001110101010001001101010111000111010101001000110110"  # noqa
@@ -12,16 +16,64 @@ CODON_HEIGHT = int(DPI * (POD_OUTER_DIA - POD_INNER_DIA) * 0.6)
 CODON_WIDTH_TOLERANCE = 0.5
 
 
+class _PrinterArgs(argparse.Namespace):
+	code: str = ""
+	output: pathlib.Path = None
+	pass
+
+
 @dataclass
 class _Codon(object):
 	color: str
 	startAngle: int
 	endAngle: int
+	pass
+
+
+def _getArgs() -> _PrinterArgs:
+	parser = argparse.ArgumentParser(description="Create a printable barcode.")
+	parser.add_argument(
+		"code",
+		help="A 140 character code to make a barcode with."
+	)
+
+	parser.add_argument(
+		"-o", "--output",
+		type=pathlib.Path,
+		help="The path of the output image. By default it outputs to 'output/customBarcode.png'"  # noqa
+	)
+
+	args = parser.parse_args(namespace=_PrinterArgs())
+
+	# verify the input code
+	if len(args.code) != 140:
+		print("The input code is not 140 character!")
+		parser.exit()
+		pass
+
+	if any(c not in "10" for c in args.code):
+		print("The input code has invalid characters! It can only have 1s and 0s.")
+		parser.exit()
+		pass
+
+	return args
 
 
 def main():
-	inputData = TEST_CODE
+	args = _getArgs()
 
+	# Create the output directory if necessary
+	outputPath = args.output
+	if outputPath is None:
+		outputPath = pathlib.Path("output/customBarcode.png")
+		os.makedirs(outputPath.parent, exist_ok=True)
+		pass
+	else:
+		os.makedirs(outputPath.parent, exist_ok=True)
+		pass
+
+	# generate a list of codons
+	inputData = args.code
 	angleSize = 360 / len(inputData)
 
 	code: list[_Codon] = []
@@ -54,6 +106,7 @@ def main():
 		i += codonWidth
 		pass
 
+	# create the image
 	with Image.new("1", (IMAGE_SIZE, IMAGE_SIZE), color=1) as im:
 		draw = ImageDraw.Draw(im)
 
@@ -70,7 +123,7 @@ def main():
 			)
 			pass
 
-		with open("output\\testImage.png", mode="wb") as outFile:
+		with open(outputPath, mode="wb") as outFile:
 			im.save(outFile, dpi=(DPI, DPI))
 			pass
 		pass

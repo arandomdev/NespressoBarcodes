@@ -3,8 +3,8 @@
 This Script is used to generate a custom code that can be passed to
 the printer script.
 
-Each code consist of 4 segments, 3 four characters and 1 six character.
-for example "1100 1101 0100 001101"
+Each code can be summarized in 4 segments, 3 four character segments and 1 six
+character segment. For example "1100 1101 0100 001101"
 """
 
 import argparse
@@ -24,14 +24,52 @@ for example, Melozio has the following code
 """
 
 
-# 4 segments in order, seperated by a space
-SEGMENTS = "1100 1101 0100 001101"
+def _getCode() -> tuple[str, str, str, str]:
+	"""Get the code from the user
+	"""
+
+	parser = argparse.ArgumentParser(description="Generate a code to pass to the printer.")  # noqa
+	parser.add_argument(
+		"code",
+		nargs="+",
+		help="The code to generate with. Formated like this, '1100 1101 0100 001101'"
+	)
+
+	segments = parser.parse_args().code
+
+	# verify the segments
+	if len(segments) != 4:
+		print("Did not get 4 segments!")
+		parser.exit()
+		pass
+
+	for i, segment in enumerate(segments):
+		# check if each segment only contains 1s and 0s
+		if any(c not in "10" for c in segment):
+			print(f"Segment {i+1} has invalid characters! It can only contain 1s and 0s.")  # noqa
+			parser.exit()
+			pass
+
+		# check if the length is correct
+		if i == 3:
+			if len(segment) != 6:
+				print("Segment 4 does not have 6 characters!")
+				parser.exit()
+				pass
+			pass
+		else:
+			if len(segment) != 4:
+				print(f"Segment {i+1} does not have 4 characters!")
+				parser.exit()
+				pass
+			pass
+		pass
+
+	return segments
 
 
 def main():
-	code = ""
-
-	seg1, seg2, seg3, seg4 = SEGMENTS.split(" ")
+	seg1, seg2, seg3, seg4 = _getCode()
 
 	formatter = "01{seg1}{sep1}{seg2}{sep2}{seg3}{sep3}{seg4}{sep4}"
 	formatter = partial(
@@ -42,38 +80,39 @@ def main():
 		seg4=seg4
 	)
 
-	code += formatter(
+	formattedCode = ""
+	formattedCode += formatter(
 		sep1="10",
 		sep2="10",
 		sep3="10",
 		sep4="01",
 	)
-	code += formatter(
+	formattedCode += formatter(
 		sep1="10",
 		sep2="01",
 		sep3="01",
 		sep4="10",
 	)
-	code += formatter(
+	formattedCode += formatter(
 		sep1="01",
 		sep2="10",
 		sep3="01",
 		sep4="01",
 	)
-	code += formatter(
+	formattedCode += formatter(
 		sep1="01",
 		sep2="01",
 		sep3="01",
 		sep4="01",
 	)
-	code += formatter(
+	formattedCode += formatter(
 		sep1="01",
 		sep2="01",
 		sep3="10",
 		sep4="10",
 	)
 
-	print(code)
+	print(formattedCode)
 	pass
 
 
