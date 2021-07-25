@@ -5,8 +5,6 @@ from dataclasses import dataclass
 
 from PIL import Image, ImageDraw
 
-TEST_CODE = "01110010110110010010001101010111001011010101000100110110011100011101100100010011010101110001110101010001001101010111000111010101001000110110"  # noqa
-
 IMAGE_SIZE = 2400
 POD_OUTER_DIA = 2.26
 POD_INNER_DIA = 2.02
@@ -47,12 +45,12 @@ def _getArgs() -> _PrinterArgs:
 
 	# verify the input code
 	if len(args.code) != 140:
-		print("The input code is not 140 character!")
+		print("The code is not 140 character!")
 		parser.exit()
 		pass
 
 	if any(c not in "10" for c in args.code):
-		print("The input code has invalid characters! It can only have 1s and 0s.")
+		print("The code has invalid characters! It can only have 1s and 0s.")
 		parser.exit()
 		pass
 
@@ -123,9 +121,7 @@ def main():
 			)
 			pass
 
-		with open(outputPath, mode="wb") as outFile:
-			im.save(outFile, dpi=(DPI, DPI))
-			pass
+		im.save(outputPath)
 		pass
 	pass
 

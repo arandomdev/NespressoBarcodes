@@ -1,9 +1,9 @@
-"""Used to generate a custom barcode.
+"""Used to generate a custom code.
 
-This Script is used to generate a custom code that can be passed to
+This script is used to generate a custom code that can be passed to
 the printer script.
 
-Each code can be summarized in 4 segments, 3 four character segments and 1 six
+Each ID can be summarized in 4 segments, 3 four character segments and 1 six
 character segment. For example "1100 1101 0100 001101"
 """
 
@@ -11,10 +11,10 @@ import argparse
 from functools import partial
 
 """
-The four segments are repeated for times with different separators in
+The four segments are repeated four times with different separators in
 between. Though the separators are the same across pods.
 
-for example, Melozio has the following code
+For example, Melozio has the following code
 
 01 1100 10 1101 10 0100 10 010110 01
 01 1100 10 1101 01 0100 01 010110 10
@@ -24,15 +24,15 @@ for example, Melozio has the following code
 """
 
 
-def _getCode() -> tuple[str, str, str, str]:
+def _getID() -> tuple[str, str, str, str]:
 	"""Get the code from the user
 	"""
 
 	parser = argparse.ArgumentParser(description="Generate a code to pass to the printer.")  # noqa
 	parser.add_argument(
-		"code",
+		"ID",
 		nargs="+",
-		help="The code to generate with. Formated like this, '1100 1101 0100 001101'"
+		help="The ID to generate a code with. Formated like this, '1100 1101 0100 001101'"  # noqa
 	)
 
 	segments = parser.parse_args().code
@@ -69,7 +69,7 @@ def _getCode() -> tuple[str, str, str, str]:
 
 
 def main():
-	seg1, seg2, seg3, seg4 = _getCode()
+	seg1, seg2, seg3, seg4 = _getID()
 
 	formatter = "01{seg1}{sep1}{seg2}{sep2}{seg3}{sep3}{seg4}{sep4}"
 	formatter = partial(
