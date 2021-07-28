@@ -4,6 +4,8 @@ This project aims to decode and generate printable barcodes for the Nespresso's 
 ## Setup
 1. Download the latest version of python [here](https://www.python.org/downloads/). Or at least have version 3.7 or greater.
 2. Install Pillow through `pip install Pillow`
+3. Download this project either in the Release section, or though `git clone https://github.com/arandomdev/NespressoBarcodes.git`
+4. Open a terminal inside the project folder.
 
 # Usage
 This project has two scripts, the generator and printer.
