@@ -35,7 +35,7 @@ def _getID() -> tuple[str, str, str, str]:
 		help="The ID to generate a code with. Formated like this, '1100 1101 0100 001101'"  # noqa
 	)
 
-	segments = parser.parse_args().code
+	segments = parser.parse_args().ID
 
 	# verify the segments
 	if len(segments) != 4:
