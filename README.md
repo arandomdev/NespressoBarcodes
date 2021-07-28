@@ -60,14 +60,14 @@ In the following example, each call is a single line, including the code.
 After getting an image from the printer script, you can print it and test it out. But there are a few things you need to do before that.
 
 1. import the image into a program like Google Docs, where you can control the size of the image. For Google Docs, drag the image into a blank document, click on the image and then "Image Options", and under "Size & Rotation" set the width to 2.26in
-![Google Docs formatting example](docs\GoogleDocsExample.png)
+![Google Docs formatting example](docs/GoogleDocsExample.png)
 
 2. Print out the image and cut out the barcode.
 
 3. Using a fine sharpie or black pen, go over the black sections to darken them. Without this step, my machine would not read the barcode.
 
 4. Test it out!
-![A prepared barcode](docs\PreparedBarcode.png)
+![A prepared barcode](docs/PreparedBarcode.png)
 
 # Helpful links
 * https://www.reddit.com/r/nespresso/comments/d9xnv9/breaking_the_nespresso_vertuo_barcodes/
