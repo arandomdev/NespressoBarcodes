@@ -8,6 +8,7 @@ character segment. For example "1100 1101 0100 001101"
 """
 
 import argparse
+from typing import Tuple
 from functools import partial
 
 """
@@ -24,7 +25,7 @@ For example, Melozio has the following code
 """
 
 
-def _getID() -> tuple[str, str, str, str]:
+def _getID() -> Tuple[str, str, str, str]:
 	"""Get the code from the user
 	"""
 
