@@ -28,6 +28,7 @@ Here is a table of IDs from various tags (Thanks to [u/UnknownCofeeDrinker](http
 | Vanizio                | 230 ml       | 1100      | 1101      | 0100                        | 010110    |
 | Decaffeinato           | 230 ml       | 1001      | 1110      | 0100                        | 001000    |
 | Blanco Forte           | 230 ml       | 1111      | 0100      | 0010                        | 010110    |
+| Pumpkin Spice Cake     | 230 ml       | 1010      | 0010      | 0100                        | 001110    |
 | Aflorazio              | 150 ml       | 1010      | 1000      | 1110                        | 001110    |
 | Fortado                | 150 ml       | 1111      | 1011      | 1110                        | 001110    |
 | Double Expresso Scuro  | 80 ml        | 1010      | 1011      | 0001                        | 001110    |
