@@ -29,11 +29,14 @@ Here is a table of IDs from various tags (Thanks to [u/UnknownCofeeDrinker](http
 | Decaffeinato           | 230 ml       | 1001      | 1110      | 0100                        | 001000    |
 | Blanco Forte           | 230 ml       | 1111      | 0100      | 0010                        | 010110    |
 | Pumpkin Spice Cake     | 230 ml       | 1010      | 0010      | 0100                        | 001110    |
+| Hazelino Muffin        | 230 ml       | 1100      | 1101      | 0100                        | 001110    |
+| Ice Forte              | 230 ml       | 1010      | 0010      | 0100                        | 010101    |
 | Aflorazio              | 150 ml       | 1010      | 1000      | 1110                        | 001110    |
 | Fortado                | 150 ml       | 1111      | 1011      | 1110                        | 001110    |
 | Double Expresso Scuro  | 80 ml        | 1010      | 1011      | 0001                        | 001110    |
 | Double Expresso Chiaro | 80 ml        | 1100      | 1011      | 0001                        | 001110    |
 | Blanco Leggero         | 80 ml        | 1111      | 1101      | 0001                        | 001110    |
+| Iced Leggero           | 80 ml        | 1010      | 1011      | 0001                        | 010101    |
 | Diavolito              | 40 ml        | 1001      | 1101      | 1011                        | 001101    |
 | Altissio               | 40 ml        | 1010      | 1101      | 1011                        | 010101    |
 | Deca Intenso           | 40 ml        | 1010      | 0010      | 1011                        | 010101    |
