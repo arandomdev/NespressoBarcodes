@@ -33,6 +33,7 @@ Here is a table of IDs from various tags (Thanks to [u/UnknownCofeeDrinker](http
 | Ice Forte              | 230 ml       | 1010      | 0010      | 0100                        | 010101    |
 | Aflorazio              | 150 ml       | 1010      | 1000      | 1110                        | 001110    |
 | Fortado                | 150 ml       | 1111      | 1011      | 1110                        | 001110    |
+| Ethiopia Gran Lungo    | 150 ml       | 1100      | 0100      | 1110                        | 010101    |
 | Double Expresso Scuro  | 80 ml        | 1010      | 1011      | 0001                        | 001110    |
 | Double Expresso Chiaro | 80 ml        | 1100      | 1011      | 0001                        | 001110    |
 | Blanco Leggero         | 80 ml        | 1111      | 1101      | 0001                        | 001110    |
