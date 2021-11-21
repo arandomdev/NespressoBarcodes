@@ -31,9 +31,13 @@ Here is a table of IDs from various tags (Thanks to [u/UnknownCofeeDrinker](http
 | Pumpkin Spice Cake     | 230 ml       | 1010      | 0010      | 0100                        | 001110    |
 | Hazelino Muffin        | 230 ml       | 1100      | 1101      | 0100                        | 001110    |
 | Ice Forte              | 230 ml       | 1010      | 0010      | 0100                        | 010101    |
+| Vanilla Custard Pie    | 230 ml       | 1100      | 1101      | 0100                        | 001101    |
+| Chocolate Fudge        | 230 ml       | 1111      | 0100      | 0010                        | 001110    |
+| Ice Forte              | 230 ml       | 0101      | 0110      | 0100                        | 100100    |
 | Aflorazio              | 150 ml       | 1010      | 1000      | 1110                        | 001110    |
 | Fortado                | 150 ml       | 1111      | 1011      | 1110                        | 001110    |
 | Ethiopia Gran Lungo    | 150 ml       | 1100      | 0100      | 1110                        | 010101    |
+| Costa Rica             | 150 ml       | 1001      | 1011      | 1110                        | 100011    |
 | Double Expresso Scuro  | 80 ml        | 1010      | 1011      | 0001                        | 001110    |
 | Double Expresso Chiaro | 80 ml        | 1100      | 1011      | 0001                        | 001110    |
 | Blanco Leggero         | 80 ml        | 1111      | 1101      | 0001                        | 001110    |
